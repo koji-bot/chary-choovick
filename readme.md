@@ -1,6 +1,7 @@
 # ZMK CONFIG FOR THE CHARYBDIS 4X6 WIRELESS SPLIT KEYBOARD
 
 This configuration supports two modes:
+
 - **Standalone Mode**: Right keyboard acts as central, connects directly to host
 - **Dongle Mode**: Dedicated dongle with display acts as central, both keyboards connect to it
 
@@ -47,6 +48,7 @@ This configuration supports two modes:
 Here is the BOM for this project: [BOM Charybdis 4x6 Wireless](/docs/bom/readme.md)
 
 ### Additional Components for Dongle Mode
+
 - 1x Seeeduino XIAO BLE (nRF52840) - Dongle central
 - 1x [Prospector Display Module](https://github.com/carrefinho/prospector) - OLED display for dongle
 
@@ -57,6 +59,7 @@ Here is the BOM for this project: [BOM Charybdis 4x6 Wireless](/docs/bom/readme.
 This repository includes a **ZMK Tester Shield** (`tester_pro_micro`) for troubleshooting and testing Pro Micro-compatible boards (Nice!Nano, Seeeduino XIAO, etc.). The tester shield maps all 18 available GPIO pins (D0-D10, D14-D16, D18-D21) to virtual "keys" that output "PIN X" when triggered, helping you verify all GPIO pins are working correctly before assembling your keyboard.
 
 **How to use:**
+
 1. Flash `tester_pro_micro-nice_nano_v2-zmk.uf2` to your controller (see [Building Firmware](#building-firmware))
 2. Connect the board via USB to your computer
 3. Open a text editor
@@ -104,6 +107,13 @@ zmk-config-charybdis/
 │   └── BUILD_README.md              # Build instructions
 ├── docs/                            # Documentation
 │   ├── bom/                         # Bill of Materials
+│   │   ├── stl/                     # 3D Print files
+│   │   │   ├── charybdis_left_base.stl
+│   │   │   ├── charybdis_left_button.stl
+│   │   │   ├── charybdis_left_case.stl
+│   │   │   ├── scylla_right_base.stl
+│   │   │   ├── scylla_right_button.stl
+│   │   │   └── scylla_right_case.stl
 │   │   └── readme.md
 │   ├── keymap/                      # Keymap documentation
 │   │   ├── config.yaml              # Keymap drawer configuration
@@ -119,12 +129,14 @@ zmk-config-charybdis/
 ### Key Files Explained
 
 #### Shared Configuration Files (Consolidated)
+
 - **`charybdis_layers.h`**: Layer definitions (BASE, POINTER, LOWER, RAISE, SYMBOLS, SCROLL, SNIPING) used across all shields
 - **`charybdis_trackball_processors.dtsi`**: Shared trackball input processing configurations (snipe/scroll/move modes)
 - **`charybdis_right_common.dtsi`**: Common hardware config for both right keyboard variants (GPIO, SPI, trackball device)
 - **`charybdis_right_dongle.conf`**: Symlink to `charybdis_right_standalone.conf` (identical hardware config)
 
 #### Shield-Specific Files
+
 - **`config/charybdis.keymap`**: Defines all key layers, behaviors, and bindings
 - **`config/charybdis.dtsi`**: Shared device tree definitions (keyboard matrix, kscan, physical layout)
 - **`charybdis_left.overlay`**: Left side configuration (same for both modes)
@@ -136,13 +148,17 @@ zmk-config-charybdis/
 ## Operating Modes
 
 ### Standalone Mode
+
 In standalone mode, the right keyboard acts as the central device:
+
 - **Left keyboard**: Peripheral (Nice!Nano v2)
 - **Right keyboard**: Central with trackball (Nice!Nano v2)
 - **Connection**: Left → Right → Host Computer
 
 ### Dongle Mode
+
 In dongle mode, a dedicated dongle acts as the central device with a display:
+
 - **Left keyboard**: Peripheral (Nice!Nano v2)
 - **Right keyboard**: Peripheral with trackball (Nice!Nano v2)
 - **Dongle**: Central with Prospector OLED display (Seeeduino XIAO BLE)
@@ -150,6 +166,7 @@ In dongle mode, a dedicated dongle acts as the central device with a display:
 - **Pairing Order**: Pair left keyboard first, then right keyboard for correct battery display
 
 ### Dongle Display Features (Prospector Module)
+
 - Active layer indicator with layer names
 - Split battery status for both peripherals
 - Peripheral connection status indicators
@@ -244,6 +261,7 @@ trackball: trackball@0 {
 ```
 
 **Common CPI values:**
+
 - `400` - Low sensitivity (more physical movement needed)
 - `800` - Default, balanced sensitivity
 - `1200` - High sensitivity
@@ -278,6 +296,7 @@ scroll {
 The scaler uses the formula: `output = (input × multiplier) / divisor`
 
 **Examples:**
+
 - `<&zip_xy_scaler 2 1>` - Doubles movement speed (input × 2 / 1)
 - `<&zip_xy_scaler 1 2>` - Halves movement speed (input × 1 / 2)
 - `<&zip_xy_scaler 7 6>` - Slightly faster than 1:1 (input × 7 / 6)
@@ -296,6 +315,7 @@ The scaler uses the formula: `output = (input × multiplier) / divisor`
 ### Reference Documentation
 
 For more details on input processors, see:
+
 - [ZMK Scaler Documentation](https://zmk.dev/docs/keymaps/input-processors/scaler)
 - [PMW3610 Driver Configuration](https://github.com/badjeff/zmk-pmw3610-driver)
 
@@ -312,6 +332,7 @@ The physical layout for ZMK Studio is defined in [`config/boards/shields/charybd
 ZMK Studio support is enabled by default via the build configuration in [`build.yaml`](/build.yaml).
 
 **Standalone mode** - Right keyboard has ZMK Studio:
+
 ```yaml
 - board: nice_nano_v2
   shield: charybdis_right_standalone
@@ -320,6 +341,7 @@ ZMK Studio support is enabled by default via the build configuration in [`build.
 ```
 
 **Dongle mode** - Prospector dongle has ZMK Studio:
+
 ```yaml
 - board: seeeduino_xiao_ble
   shield: prospector_dongle prospector_adapter
@@ -342,6 +364,7 @@ This combo is defined in [`config/charybdis.keymap`](/config/charybdis.keymap) a
 ## Building Firmware
 
 ### GitHub Actions (Automatic)
+
 Push changes to your repository and GitHub Actions will automatically build firmware for all configurations defined in [`build.yaml`](/build.yaml). Firmware files will be available in the Actions artifacts as a `firmware.zip` file containing:
 
 - `charybdis_left-nice_nano_v2-zmk.uf2`
@@ -353,9 +376,11 @@ Push changes to your repository and GitHub Actions will automatically build firm
 - `settings_reset-seeeduino_xiao_ble-zmk.uf2`
 
 ### Local Build (Manual)
+
 For local building using Docker, see [`manual_build/BUILD_README.md`](/manual_build/BUILD_README.md) for detailed instructions.
 
 The interactive build script provides options for:
+
 1. **charybdis_left** - Left keyboard (works with both modes)
 2. **charybdis_right_standalone** - Right keyboard for standalone mode (Nice!Nano v2)
 3. **charybdis_right_dongle** - Right keyboard for dongle mode (Nice!Nano v2)
@@ -370,20 +395,25 @@ Built firmware files are automatically copied to `manual_build/artifacts/output/
 ## Flashing Firmware
 
 ### How to Flash
+
 1. Double-press the reset button on the board to enter bootloader mode
 2. The board will appear as a USB drive
 3. Copy the appropriate `.uf2` file to the USB drive
 4. The board will automatically flash and restart
 
 ### Standalone Mode
+
 **First time or changing modes: Reset settings first**
+
 1. Flash `settings_reset-nice_nano_v2-zmk.uf2` to **both** keyboards
 2. Flash `charybdis_left-nice_nano_v2-zmk.uf2` to the left keyboard
 3. Flash `charybdis_right_standalone-nice_nano_v2-zmk.uf2` to the right keyboard
 4. The keyboards will automatically pair with each other
 
 ### Dongle Mode
+
 **First time or changing modes: Reset settings first**
+
 1. Flash `settings_reset-nice_nano_v2-zmk.uf2` to **both** keyboards
 2. Flash `settings_reset-seeeduino_xiao_ble-zmk.uf2` to the **dongle**
 3. Flash `prospector_dongle prospector_adapter-seeeduino_xiao_ble-zmk.uf2` to the dongle
@@ -392,7 +422,9 @@ Built firmware files are automatically copied to `manual_build/artifacts/output/
 6. **Important**: Pair the left keyboard to the dongle first, then pair the right keyboard
 
 ### Tester Pro Micro (GPIO Testing)
+
 **For testing a Pro Micro-compatible board**
+
 1. Flash `tester_pro_micro-nice_nano_v2-zmk.uf2` (or your board variant) to the controller
 2. Connect the board via USB to your computer
 3. Open a text editor or terminal
