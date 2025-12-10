@@ -432,11 +432,20 @@ ZMK Studio support is enabled by default via the build configuration in [`build.
   cmake-args: -DCONFIG_ZMK_STUDIO=y
 ```
 
-**Dongle mode** - Prospector dongle has ZMK Studio:
+**Dongle mode** - Multiple dongles have ZMK Studio:
 
+**Prospector dongle:**
 ```yaml
 - board: seeeduino_xiao_ble
   shield: dongle_prospector prospector_adapter
+  snippet: studio-rpc-usb-uart
+  cmake-args: -DCONFIG_ZMK_STUDIO=y
+```
+
+**Nice!Nano dongles (both 32px and 64px):**
+```yaml
+- board: nice_nano_v2
+  shield: dongle_nice_32 dongle_display  # or dongle_nice_64
   snippet: studio-rpc-usb-uart
   cmake-args: -DCONFIG_ZMK_STUDIO=y
 ```
@@ -479,10 +488,12 @@ The interactive build script provides options for:
 2. **charybdis_right_standalone** - Right keyboard for standalone mode (Nice!Nano v2)
 3. **dongle_charybdis_right** - Right keyboard for dongle mode (Nice!Nano v2)
 4. **dongle_prospector prospector_adapter** - Dongle with display (Seeeduino XIAO BLE)
-5. **tester_pro_micro** - GPIO pin tester for Pro Micro-compatible boards
-6. **settings_reset** - Reset stored settings
+5. **dongle_nice_32 dongle_display** - Nice!Nano dongle with 128x32 OLED
+6. **dongle_nice_64 dongle_display** - Nice!Nano dongle with 128x64 OLED
+7. **tester_pro_micro** - GPIO pin tester for Pro Micro-compatible boards
+8. **settings_reset** - Reset stored settings
 
-⚠️ **Known Issue:** Option 4 (dongle_prospector with prospector_adapter) currently fails in local builds due to module patching requirements. Options 1-3, 5, and 6 work correctly. **Use GitHub Actions for dongle builds** or consider using [act](https://github.com/nektos/act) to run the GitHub Actions workflow locally.
+⚠️ **Known Issue:** Option 4 (dongle_prospector with prospector_adapter) currently fails in local builds due to module patching requirements. Options 1-3, 5-8 work correctly. **Use GitHub Actions for Prospector dongle builds** or consider using [act](https://github.com/nektos/act) to run the GitHub Actions workflow locally.
 
 Built firmware files are automatically copied to `manual_build/artifacts/output/` with descriptive names.
 
