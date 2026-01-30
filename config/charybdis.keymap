@@ -156,143 +156,10 @@
         , <&macro_release &kp LSHIFT>
         ;
     };
-  };
-
-  combos {
-    compatible = "zmk,combos";
-    timeout-ms = <20>;
-    require-prior-idle-ms = <250>;
-
-    // Studio Unlock Combo - all three right thumb keys
-    combo_studio_unlock {
-      timeout-ms = <50>;
-      key-positions = <53 54 55>;
-      bindings = <&studio_unlock>;
-    };
-
-    // Gaming layer toggle combo - keys 49, 55, 54
-    combo_gaming_toggle {
-      timeout-ms = <50>;
-      key-positions = <49 55 54>;
-      bindings = <&tog GAMING>;
-    };
-
-  };
+/*   };
 
 
-
-
-    combos {
-        compatible = "zmk,combos";
-
-        cap {
-            bindings = <&caps_word>;
-            key-positions = <41 42>;
-        };
-
-        HENKAN {
-            bindings = <&kp INT_HENKAN>;
-            key-positions = <43 44>;
-        };
-
-        MUHENKAN {
-            bindings = <&kp INT_MUHENKAN>;
-            key-positions = <39 40>;
-        };
-
-        alpha {
-            bindings = <&kp LBKT>;
-            key-positions = <29 30>;
-        };
-        
-        LCLICK {
-            bindings = <&mkp LCLK>;
-            key-positions = <31 32>;
-        };
-
-        RCLICK {
-            bindings = <&mkp RCLK>;
-            key-positions = <32 33>;
-        };
-    };
-
-    behaviors {
-        mt_B: mod_tap_B {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            display-name = "Mod-Tap_B";
-        };
-    };
-
-    behaviors {
-        TD_ctrlBS: TD_ctrlBS {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_CTRLBS";
-            #binding-cells = <0>;
-            bindings =
-                <&mt_B RIGHT_SHIFT BACKSPACE>,
-                <&mt BACKSPACE RC(BACKSPACE)>;
-
-            tapping-term-ms = <200>;
-        };
-
-        TD_ctrlZ: TD_ctrlZ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_CTRLZ";
-            #binding-cells = <0>;
-            bindings = <&mt_B LCTRL Z>, <&kp LC(Z)>;
-
-            tapping-term-ms = <300>;
-        };
-        TD_DEL: TD_DEL {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_DEL";
-            #binding-cells = <0>;
-            bindings = <&lt 4 TAB>, <&kp DEL>;
-        };
-
-        hm_OMOJI1: hm_OMOJI1 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HM_OMOJI1";
-            bindings = <&kp>, <&OMOJI>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-        };
-
-        hm_OMOJI2: hm_OMOJI2 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HM_OMOJI2";
-            bindings = <&kp>, <&OMOJI2>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-        };
-        TD_dot: TD_dot {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_DOT";
-            #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&INYO>;
-        };
-        TD_midashi: TD_midashi {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_MIDASHI";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&midashi>;
-        };
-
-        TD_markdown: TD_markdown {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_MARKDOWN";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&markdown>;
-        };
-    };
-
-   macros {
+ macros { */
         KAKKO1: KAKKO1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -418,6 +285,143 @@
 
 
 
+
+
+  combos {
+    compatible = "zmk,combos";
+    timeout-ms = <20>;
+    require-prior-idle-ms = <250>;
+
+    // Studio Unlock Combo - all three right thumb keys
+    combo_studio_unlock {
+      timeout-ms = <50>;
+      key-positions = <53 54 55>;
+      bindings = <&studio_unlock>;
+    };
+
+    // Gaming layer toggle combo - keys 49, 55, 54
+    combo_gaming_toggle {
+      timeout-ms = <50>;
+      key-positions = <49 55 54>;
+      bindings = <&tog GAMING>;
+    };
+
+/*   };
+
+
+
+
+    combos { */
+        compatible = "zmk,combos";
+
+        cap {
+            bindings = <&caps_word>;
+            key-positions = <41 42>;
+        };
+
+        HENKAN {
+            bindings = <&kp INT_HENKAN>;
+            key-positions = <43 44>;
+        };
+
+        MUHENKAN {
+            bindings = <&kp INT_MUHENKAN>;
+            key-positions = <39 40>;
+        };
+
+        alpha {
+            bindings = <&kp LBKT>;
+            key-positions = <29 30>;
+        };
+        
+        LCLICK {
+            bindings = <&mkp LCLK>;
+            key-positions = <31 32>;
+        };
+
+        RCLICK {
+            bindings = <&mkp RCLK>;
+            key-positions = <32 33>;
+        };
+    };
+
+    behaviors {
+        mt_B: mod_tap_B {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap_B";
+        };
+    };
+
+    behaviors {
+        TD_ctrlBS: TD_ctrlBS {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRLBS";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_B RIGHT_SHIFT BACKSPACE>,
+                <&mt BACKSPACE RC(BACKSPACE)>;
+
+            tapping-term-ms = <200>;
+        };
+
+        TD_ctrlZ: TD_ctrlZ {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRLZ";
+            #binding-cells = <0>;
+            bindings = <&mt_B LCTRL Z>, <&kp LC(Z)>;
+
+            tapping-term-ms = <300>;
+        };
+        TD_DEL: TD_DEL {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DEL";
+            #binding-cells = <0>;
+            bindings = <&lt 4 TAB>, <&kp DEL>;
+        };
+
+        hm_OMOJI1: hm_OMOJI1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_OMOJI1";
+            bindings = <&kp>, <&OMOJI>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+        };
+
+        hm_OMOJI2: hm_OMOJI2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_OMOJI2";
+            bindings = <&kp>, <&OMOJI2>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+        };
+        TD_dot: TD_dot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DOT";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&INYO>;
+        };
+        TD_midashi: TD_midashi {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MIDASHI";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&midashi>;
+        };
+
+        TD_markdown: TD_markdown {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MARKDOWN";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&markdown>;
+        };
+    };
+
+  
   keymap {
     compatible = "zmk,keymap";
 
