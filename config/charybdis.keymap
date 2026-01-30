@@ -179,6 +179,245 @@
 
   };
 
+
+
+
+    combos {
+        compatible = "zmk,combos";
+
+        cap {
+            bindings = <&caps_word>;
+            key-positions = <41 42>;
+        };
+
+        HENKAN {
+            bindings = <&kp INT_HENKAN>;
+            key-positions = <43 44>;
+        };
+
+        MUHENKAN {
+            bindings = <&kp INT_MUHENKAN>;
+            key-positions = <39 40>;
+        };
+
+        alpha {
+            bindings = <&kp LBKT>;
+            key-positions = <29 30>;
+        };
+        
+        LCLICK {
+            bindings = <&mkp LCLK>;
+            key-positions = <31 32>;
+        };
+
+        RCLICK {
+            bindings = <&mkp RCLK>;
+            key-positions = <32 33>;
+        };
+    };
+
+    behaviors {
+        mt_B: mod_tap_B {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap_B";
+        };
+    };
+
+    behaviors {
+        TD_ctrlBS: TD_ctrlBS {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRLBS";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_B RIGHT_SHIFT BACKSPACE>,
+                <&mt BACKSPACE RC(BACKSPACE)>;
+
+            tapping-term-ms = <200>;
+        };
+
+        TD_ctrlZ: TD_ctrlZ {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRLZ";
+            #binding-cells = <0>;
+            bindings = <&mt_B LCTRL Z>, <&kp LC(Z)>;
+
+            tapping-term-ms = <300>;
+        };
+        TD_DEL: TD_DEL {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DEL";
+            #binding-cells = <0>;
+            bindings = <&lt 4 TAB>, <&kp DEL>;
+        };
+
+        hm_OMOJI1: hm_OMOJI1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_OMOJI1";
+            bindings = <&kp>, <&OMOJI>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+        };
+
+        hm_OMOJI2: hm_OMOJI2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_OMOJI2";
+            bindings = <&kp>, <&OMOJI2>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+        };
+        TD_dot: TD_dot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DOT";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&INYO>;
+        };
+        TD_midashi: TD_midashi {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MIDASHI";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&midashi>;
+        };
+
+        TD_markdown: TD_markdown {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MARKDOWN";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&markdown>;
+        };
+    };
+
+   macros {
+        KAKKO1: KAKKO1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK &kp LEFT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "KAKKO1";
+        };
+
+        KAKKO2: KAKKO2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET &kp BSLH &kp LEFT_ARROW>;
+            label = "KAKKO2";
+        };
+        KAKKO3: KAKKO3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp AT &kp AT &kp LEFT_ARROW>;
+            label = "KAKKO3";
+        };
+        KAKKO4: KAKKO4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACE &kp PIPE &kp LEFT_ARROW>;
+            label = "KAKKO4";
+        };
+        mail_FROM: mail_FROM {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(E) &kp LANG2 &kp LS(F) &kp LS(R) &kp LS(O) &kp LS(M) &kp SINGLE_QUOTE>;
+            label = "MAIL_FROM";
+        };
+
+        OMOJI: OMOJI {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F9 &kp F9 &kp F8 &kp ENTER>;
+            label = "OMOJI";
+        };
+
+        OMOJI2: OMOJI2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F9 &kp F9 &kp F8 &kp F8 &kp ENTER>;
+            label = "OMOJI2";
+        };
+
+        SHOMEI: SHOMEI {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp N9 &kp ENTER>;
+            label = "SHOMEI";
+        };
+        
+        DCLICK: DCLICK {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK &mkp LCLK>;
+            label = "DCLICK";
+        };
+
+        TCLICK: TCLICK {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK &mkp LCLK &mkp LCLK>;
+            label = "TCLICK";
+        };
+
+        WINUP: WINUP {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_GUI &kp UP_ARROW>;
+            label = "WINUP";
+        };
+
+        WINDOWN: WINDOWN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_GUI &kp DOWN>;
+            label = "WINDOWN";
+        };
+
+        WINLEFT: WINLEFT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_GUI &kp LEFT>;
+            label = "WINLEFT";
+        };
+
+        WINRIGHT: WINRIGHT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_GUI &kp RIGHT>;
+            label = "WINRIGHT";
+        };
+        INYO: INYO {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(PERIOD) &kp LC(V)>;
+            label = "INYO";
+        };
+        EXPLO: EXPLO {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LG(E) &kp F4 &kp LC(V) &kp ENTER>;
+            label = "EXPLO";
+        };
+        midashi: midashi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_MUHENKAN &kp LS(SQT) &kp SPACE &kp INT_HENKAN>;
+            label = "MIDASHI";
+        };
+
+        markdown: markdown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_MUHENKAN &kp LS(SQT) &kp LS(SQT) &kp INT_HENKAN &kp LEFT>;
+            label = "MARKDOWN";
+        };
+
+    };
+
+
+
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -219,7 +458,7 @@
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
  */
 
-&kp LEFT_GUI     &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &WINUP            &kp JP_YEN     &kp JP_PLUS    &kp JP_COLON    &kp JP_UNDERSCORE  &kp JP_BACKQUOTE  &kp RBKT      &mo 2              &mo 2
+&kp LEFT_GUI     &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &kp U             &kp JP_YEN     &kp JP_PLUS    &kp JP_COLON    &kp JP_UNDERSCORE  &kp JP_BACKQUOTE  &kp RBKT      &mo 2              &mo 2
 &kp ESC          &kp Q               &kp L           &kp U             &TD_midashi    &TD_dot        &kp F           &kp W              &kp R             &kp Y         &kp P              &kp LBKT
 &kp LSHFT        &mt_B LGUI E        &mt_B LALT I    &mt_B LSHFT A     &mt_B LCTRL O  &kp MINUS      &kp K           &mt_B RCTRL T      &mt_B RSHFT N     &mt_B RALT S  &mt_B RIGHT_GUI H  &kp SLASH
 &mt_B LCTRL TAB  &TD_ctrlZ           &kp X           &TD_markdown      &kp V          &kp APOS       &kp G           &kp D              &kp M             &kp J         &lt 3 B            &mo 4
