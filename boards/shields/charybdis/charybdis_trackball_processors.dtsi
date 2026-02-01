@@ -31,4 +31,9 @@
         layers = <BASE POINTER>; \
         input-processors = <&zip_xy_scaler 7 6>; \
     };
+    
+    aml {
+        layers = <BASE>;
+        input-processors = <&zip_temp_layer POINTER 300>;
+    };
 
