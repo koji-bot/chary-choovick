@@ -473,7 +473,7 @@
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
  */
 
-&kp LEFT_GUI     &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &kp U             &kp JP_YEN     &kp JP_PLUS    &kp JP_COLON    &kp JP_UNDERSCORE  &kp JP_BACKQUOTE  &kp RBKT      &mo 2              &mo 2
+&kp LEFT_GUI     &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &studio_unlock    &kp JP_YEN     &kp JP_PLUS    &kp JP_COLON    &kp JP_UNDERSCORE  &kp JP_BACKQUOTE  &kp RBKT      &mo 2              &mo 2
 &kp ESC          &kp Q               &kp L           &kp U             &TD_midashi    &TD_dot        &kp F           &kp W              &kp R             &kp Y         &kp P              &kp LBKT
 &kp LSHFT        &mt_B LGUI E        &mt_B LALT I    &mt_B LSHFT A     &mt_B LCTRL O  &kp MINUS      &kp K           &mt_B RCTRL T      &mt_B RSHFT N     &mt_B RALT S  &mt_B RIGHT_GUI H  &kp SLASH
 &mt_B LCTRL TAB  &TD_ctrlZ           &kp X           &TD_markdown      &kp V          &kp APOS       &kp G           &kp D              &kp M             &kp J         &lt 3 B            &mo 4
