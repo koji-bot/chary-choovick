@@ -482,33 +482,6 @@
  >;
     };
 
-    pointer_layer {
-      label = "POINTER";
-      display-name = "Pointer";
-      bindings = <
-/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LA(TAB)   &kp LGUI      &kp LALT      &mo SNIPING   &mkp MB4      &mkp MB5          &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &kp F11       &kp F12
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp RCTRL     &kp LG(A)     &ls_mclk      &mkp RCLK     &mkp LCLK     &mkp MCLK         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp MINUS     &kp EQUAL
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSFT      &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &mo SCROLL        &kp RC(LS(TAB)) &kp LC(TAB) &kp INS       &kp INS       &kp LBKT      &kp RBKT
-// ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-//               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
-                  &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
-//               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
- */ 
-&trans  &trans     &trans     &trans          &trans            &trans             &trans              &trans     &trans     &trans     &trans  &trans
-&trans  &trans     &trans     &trans          &trans            &kp LC(W)          &TCLICK             &TCLICK    &mkp MCLK  &trans     &trans  &trans
-&trans  &trans     &trans     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LC(LS(TAB))    &kp LA(LEFT_ARROW)  &none      &mo 4      &none      &trans  &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)       &kp RC(V)         &kp LC(TAB)        &kp LC(Z)           &kp LC(X)  &kp LC(C)  &kp RC(V)  &trans  &trans
-                              &trans          &trans            &trans             &trans              &trans
-                                              &trans            &trans             &trans
-
-
- >;
-    };
 
     lower_layer {
       label = "LOWER";
@@ -533,34 +506,6 @@ Number 1 */
 &trans    &trans    &kp UNDER  &kp SLASH    &kp MINUS  &kp APOS      &kp N0             &kp N1          &kp N2          &kp N3  &none          &kp UNDER
                                &trans       &trans     &trans        &trans             &trans
                                             &trans     &trans        &trans
-
- >;
-    };
-
-    raise_layer {
-      label = "RAISE";
-      display-name = "Raise";
-      bindings = <
-/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp ESC       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &trans        &trans       &CAC W        &kp C_VOL_UP  &kp LG(MINUS) &kp LG(EQUAL)     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F11       &kp F12
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &trans        &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp LG(N0)        &kp F23       &kp F24       &none         &none         &none         &bootloader
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &trans        &none         &none         &kp C_VOL_DN  &none         &none             &bt BT_CLR    &bt BT_CLR_ALL &none        &none         &none         &none
-// ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-//               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
-                    &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
-//               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-F_Keys 3 */
-&bt BT_SEL 0  &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4  &bt BT_CLR
-&trans        &kp RA(RG(RC(NUMBER_1)))  &kp RA(RC(RG(NUMBER_2)))  &kp RA(RC(RG(NUMBER_3)))  &kp RC(RG(RA(NUMBER_4)))  &kp LC(W)          &trans        &trans         &kp RA(RC(RG(N9)))  &kp RA(RC(RG(N0)))  &trans        &trans
-&trans        &trans                    &kp LC(LG(LEFT_ARROW))    &kp LG(TAB)               &kp LC(LG(RIGHT_ARROW))   &kp LC(LS(TAB))    &kp LA(LEFT_ARROW)        &kp RS(LG(H))  &WINUP              &kp RS(LG(S))       &trans        &trans
-&trans        &trans                    &kp LEFT_ARROW            &kp LC(LA(TAB))           &kp RIGHT_ARROW           &kp LC(TAB)        &kp F11       &WINLEFT       &WINDOWN            &WINRIGHT           &trans        &trans
-                                                                  &trans                    &trans                    &trans             &trans        &trans
-                                                                                            &trans                    &trans             &trans
-
 
  >;
     };
@@ -592,6 +537,36 @@ symbol 2 */
 
  >;
     };
+
+
+    raise_layer {
+      label = "RAISE";
+      display-name = "Raise";
+      bindings = <
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp ESC       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &trans        &trans       &CAC W        &kp C_VOL_UP  &kp LG(MINUS) &kp LG(EQUAL)     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F11       &kp F12
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &trans        &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp LG(N0)        &kp F23       &kp F24       &none         &none         &none         &bootloader
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &trans        &none         &none         &kp C_VOL_DN  &none         &none             &bt BT_CLR    &bt BT_CLR_ALL &none        &none         &none         &none
+// ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+//               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
+                    &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
+//               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+F_Keys 3 */
+&bt BT_SEL 0  &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4  &bt BT_CLR
+&trans        &kp RA(RG(RC(NUMBER_1)))  &kp RA(RC(RG(NUMBER_2)))  &kp RA(RC(RG(NUMBER_3)))  &kp RC(RG(RA(NUMBER_4)))  &kp LC(W)          &trans        &trans         &kp RA(RC(RG(N9)))  &kp RA(RC(RG(N0)))  &trans        &trans
+&trans        &trans                    &kp LC(LG(LEFT_ARROW))    &kp LG(TAB)               &kp LC(LG(RIGHT_ARROW))   &kp LC(LS(TAB))    &kp LA(LEFT_ARROW)        &kp RS(LG(H))  &WINUP              &kp RS(LG(S))       &trans        &trans
+&trans        &trans                    &kp LEFT_ARROW            &kp LC(LA(TAB))           &kp RIGHT_ARROW           &kp LC(TAB)        &kp F11       &WINLEFT       &WINDOWN            &WINRIGHT           &trans        &trans
+                                                                  &trans                    &trans                    &trans             &trans        &trans
+                                                                                            &trans                    &trans             &trans
+
+
+ >;
+    };
+
 
     scroll_layer {
       label = "SCROLL";
@@ -643,6 +618,34 @@ Sniping 5 */
 &trans  &trans  &trans  &trans          &trans            &trans    &trans  &trans     &trans     &trans     &trans  &trans
                         &trans          &trans            &trans    &trans  &trans
                                         &trans            &trans    &trans
+
+ >;
+    };
+
+    pointer_layer {
+      label = "POINTER";
+      display-name = "Pointer";
+      bindings = <
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp LA(TAB)   &kp LGUI      &kp LALT      &mo SNIPING   &mkp MB4      &mkp MB5          &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &kp F11       &kp F12
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp RCTRL     &kp LG(A)     &ls_mclk      &mkp RCLK     &mkp LCLK     &mkp MCLK         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp MINUS     &kp EQUAL
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp LSFT      &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &mo SCROLL        &kp RC(LS(TAB)) &kp LC(TAB) &kp INS       &kp INS       &kp LBKT      &kp RBKT
+// ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+//               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
+                  &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
+//               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+ */ 
+&trans  &trans     &trans     &trans          &trans            &trans             &trans              &trans     &trans     &trans     &trans  &trans
+&trans  &trans     &trans     &trans          &trans            &kp LC(W)          &TCLICK             &TCLICK    &mkp MCLK  &trans     &trans  &trans
+&trans  &trans     &trans     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LC(LS(TAB))    &kp LA(LEFT_ARROW)  &none      &mo 4      &none      &trans  &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)       &kp RC(V)         &kp LC(TAB)        &kp LC(Z)           &kp LC(X)  &kp LC(C)  &kp RC(V)  &trans  &trans
+                              &trans          &trans            &trans             &trans              &trans
+                                              &trans            &trans             &trans
+
 
  >;
     };
