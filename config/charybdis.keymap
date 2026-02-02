@@ -475,7 +475,7 @@
       label = "POINTER";
       display-name = "Pointer";
       bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LA(TAB)   &kp LGUI      &kp LALT      &mo SNIPING   &mkp MB4      &mkp MB5          &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &kp F11       &kp F12
@@ -487,14 +487,23 @@
 //               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
                   &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
+ */ 
+&trans  &trans     &trans     &trans          &trans            &trans             &trans              &trans     &trans     &trans     &trans  &trans
+&trans  &trans     &trans     &trans          &trans            &kp LC(W)          &TCLICK             &TCLICK    &mkp MCLK  &trans     &trans  &trans
+&trans  &trans     &trans     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LC(LS(TAB))    &kp LA(LEFT_ARROW)  &none      &mo 4      &none      &trans  &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)       &kp RC(V)         &kp LC(TAB)        &kp LC(Z)           &kp LC(X)  &kp LC(C)  &kp RC(V)  &trans  &trans
+                              &trans          &trans            &trans             &trans              &trans
+                                              &trans            &trans             &trans
+
+
+ >;
     };
 
     lower_layer {
       label = "LOWER";
       display-name = "Lower";
       bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp ESC       &CAC F1       &CAC F2       &CAC F3       &CAC F4       &CAC F5           &CAC F6       &CAC F7       &CAC F8       &CAC F9       &CAC F10      &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &none         &CA Q         &CA W         &CA E         &CA R         &CA T             &CA Y         &CA U         &CA I         &CA O         &CAC F11      &CAC F12
@@ -506,14 +515,22 @@
 //               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
                   &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
+Number 1 */
+&kp F12   &kp F1    &kp F2     &kp F3       &kp F4     &kp F5        &kp F6             &kp F7          &kp F8          &kp F9  &kp F10        &kp F11
+&kp RBKT  &KAKKO4   &KAKKO3    &KAKKO2      &KAKKO1    &kp JP_YEN    &kp EQUAL          &kp N7          &kp N8          &kp N9  &kp LS(N1)     &kp MINUS
+&trans    &trans    &kp DOT    &kp LS(SQT)  &kp COLON  &kp SEMI      &kp JP_UNDERSCORE  &mt_B RCTRL N4  &mt_B RSHFT N5  &kp N6  &kp LS(SLASH)  &kp SLASH
+&trans    &trans    &kp UNDER  &kp SLASH    &kp MINUS  &kp APOS      &kp N0             &kp N1          &kp N2          &kp N3  &none          &kp UNDER
+                               &trans       &trans     &trans        &trans             &trans
+                                            &trans     &trans        &trans
+
+ >;
     };
 
     raise_layer {
       label = "RAISE";
       display-name = "Raise";
       bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp ESC       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &trans        &trans       &CAC W        &kp C_VOL_UP  &kp LG(MINUS) &kp LG(EQUAL)     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F11       &kp F12
@@ -525,14 +542,23 @@
 //               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
                     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
+F_Keys 3 */
+&bt BT_SEL 0  &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4  &bt BT_CLR
+&trans        &kp RA(RG(RC(NUMBER_1)))  &kp RA(RC(RG(NUMBER_2)))  &kp RA(RC(RG(NUMBER_3)))  &kp RC(RG(RA(NUMBER_4)))  &kp LC(W)          &trans        &trans         &kp RA(RC(RG(N9)))  &kp RA(RC(RG(N0)))  &trans        &trans
+&trans        &trans                    &kp LC(LG(LEFT_ARROW))    &kp LG(TAB)               &kp LC(LG(RIGHT_ARROW))   &kp LC(LS(TAB))    &kp LA(LEFT_ARROW)        &kp RS(LG(H))  &WINUP              &kp RS(LG(S))       &trans        &trans
+&trans        &trans                    &kp LEFT_ARROW            &kp LC(LA(TAB))           &kp RIGHT_ARROW           &kp LC(TAB)        &kp F11       &WINLEFT       &WINDOWN            &WINRIGHT           &trans        &trans
+                                                                  &trans                    &trans                    &trans             &trans        &trans
+                                                                                            &trans                    &trans             &trans
+
+
+ >;
     };
 
     symbols_layer {
       label = "SYMBOLS";
       display-name = "Symbols";
       bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp GRAVE     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp TILDE     &kp SQT       &kp LT        &kp GT        &kp DQT       &kp DOT           &kp COMMA     &kp AMPS      &kp LBKT      &kp RBKT      &kp PRCNT     &trans
@@ -544,14 +570,23 @@
 //               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
                     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
+symbol 2 */
+&kp LS(GRAVE)     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)               &kp LS(N4)                 &kp LS(LBKT)    &kp LS(RBKT)  &none     &trans    &none      &none      &trans
+&kp LS(GRAVE)     &kp LS(N1)  &kp F2      &kp F3                   &kp F4                     &kp F5          &kp F6        &kp F7    &kp F8    &kp F9     &kp F10    &trans
+&kp LEFT_CONTROL  &none       &trans      &hm_OMOJI2 LEFT_SHIFT 0  &hm_OMOJI1 LEFT_CONTROL 0  &SHOMEI         &mail_FROM    &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&kp LEFT_SHIFT    &trans      &trans      &trans                   &trans                     &trans          &kp LC(Q)     &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+                                          &trans                   &trans                     &trans          &trans        &trans
+                                                                   &trans                     &trans          &trans
+
+
+ >;
     };
 
     scroll_layer {
       label = "SCROLL";
       display-name = "Scroll";
       bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
@@ -563,14 +598,22 @@
 //               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
                     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
+MITEI 4*/
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &mkp MCLK  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_CONTROL  &mo 4      &mkp RCLK  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans     &trans     &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans
+
+ >;
     };
 
     sniping_layer {
       label = "SNIPING";
       display-name = "Sniping";
       bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+/* // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
@@ -582,10 +625,18 @@
 //               ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────╮
                     &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-      >;
+Sniping 5 */
+&trans  &trans  &trans  &trans          &trans            &trans    &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans          &trans            &trans    &trans  &trans     &mkp MCLK  &trans     &trans  &trans
+&trans  &trans  &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &trans    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
+&trans  &trans  &trans  &trans          &trans            &trans    &trans  &trans     &trans     &trans     &trans  &trans
+                        &trans          &trans            &trans    &trans  &trans
+                                        &trans            &trans    &trans
+
+ >;
     };
 
-    gaming_layer {
+/*     gaming_layer {
       label = "GAMING";
       display-name = "Gaming";
       bindings = <
@@ -603,5 +654,5 @@
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
       >;
     };
-  };
+ */  };
 };

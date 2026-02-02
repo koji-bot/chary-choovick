@@ -55,6 +55,6 @@
     \
     aml { \
         layers = <BASE>; \
-        input-processors = <&zip_temp_layer 1 300>; \
+        input-processors = <&zip_temp_layer 6 300>; \
     };
 
