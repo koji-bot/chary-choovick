@@ -310,13 +310,13 @@
       bindings = <&studio_unlock>;
     };
 
-    // Gaming layer toggle combo - keys 49, 55, 54
+/*     // Gaming layer toggle combo - keys 49, 55, 54
     combo_gaming_toggle {
       timeout-ms = <50>;
       key-positions = <49 55 54>;
       bindings = <&tog GAMING>;
     };
-
+ */
 /*   };
 
 
