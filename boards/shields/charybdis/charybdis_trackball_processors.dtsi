@@ -53,8 +53,10 @@
         input-processors = <&zip_xy_scaler 7 6>; \
     }; \
     \
-    aml { \
+   input-processors = <&zip_temp_layer 6 1000>; 
+
+/*     aml { \
         layers = <BASE>; \
         input-processors = <&zip_temp_layer 6 1000>; \
     };
-
+ */
