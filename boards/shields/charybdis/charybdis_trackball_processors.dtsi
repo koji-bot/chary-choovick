@@ -58,3 +58,15 @@
         input-processors = <&zip_temp_layer 6 1000>; \
     };
 
+    zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <500>;
+        excluded-positions = <
+            38  // ] 
+            39  // N
+            40  // M
+            46  // <
+            47  // >
+        >; 
+    };
